@@ -14,13 +14,15 @@
         <form action="Practica8.php"method="POST">
             <?php
                 if(isset($_POST["carta1"])){
-                   $carta1=$_POST("carta1");
-                   $carta2=$_POST("carta2");
+                   $carta1 = $_POST["carta1"];
+                   $carta2 = $_POST["carta2"];
                    //comienza la logica del juego
                    $carta=rand(1,54);
-                   $cartas_dadas=[];
-                   array_push($cartas_dadas, $carta);
-                    }else{
+                   echo"<h2> Carta dada <img src='fotos_loteria/".$carta.".jpeg' class='img-fluid' width='100px'></h2>";
+                  
+        
+                }else{
+
                         $carta1=[];
                         $total=0;
                         while ($total<16) {
@@ -49,11 +51,7 @@
                             for ($i=0; $i <16; $i++){
                                 echo"<img src='fotos_loteria/".$carta1[$i].".jpeg'class='img-thumbnail' width='25%'>";
                                 echo"<input type='hidden' name='carta1[]' value='".$carta1[$i]."'>";
-                            }else{
-                                echo"<div class='ficha'><img src='fotos_loteria/".$carta1[$i].".jpeg'class='img-thumbnail' width='25%'>";
-
                             }
-                            echo"input"
                         ?>
 
                     </div>
